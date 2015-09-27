@@ -27,8 +27,7 @@ public class MainClass {
 				
 				
 				Process.Start("osascript", string.Format("-e 'display notification \"{0}\" with title \"Home CI\"'",
-					string.Join(" / ", allerrs.Select(line => line.Replace("\"", "\\\"").Replace("'", "`")))
-					.Substring(0, 500)));
+					string.Join(" / ", allerrs.Select(line => line.Replace("\"", "\\\"").Replace("'", "`")))));
 			}
 			var wait = min_seconds - (int)(DateTime.Now - start).TotalSeconds;
 			if (wait > 0)
